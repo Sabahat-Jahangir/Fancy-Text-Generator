@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="canonical" href="#">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Font for Inst Stylish Font For Insta: ? #1 ?? BEST - ? Copy and Paste Fonts For Insta. ">
+<meta property="og:description" content="???? ??? ?????: It is the ????.1 Instagram Fonts generator. You can also use it as a copy and paste Instagram Fonts.">
+<meta property="og:url" content="https://fontforinst.com/">
+<meta property="og:site_name" content="FontForInst">
+<meta name="google-site-verification" content="tg" />
+
+
+ <link rel="icon" type="image/png" href="http://fontforinsta.com/fav.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+   .fixed {
+    position: fixed;
+    top:0; left:0;
+    width: 100%; 
+    z-index:99; 

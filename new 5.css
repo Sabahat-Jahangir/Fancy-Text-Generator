@@ -1,0 +1,72 @@
+function wrapInFlourish(text) {
+      return flourishArray[Math.floor(Math.random()*flourishArray.length)].replace("[[text]]", text);
+    }
+    
+    function wrapInSymbols(text, number) {
+      return randomSymbols(number) +" "+ text +" "+ randomSymbols(number)
+    }
+
+
+
+    function firework(text) {
+      return text.split("").join("Ò‰")+ "Ò‰";
+    }
+
+
+
+
+    function weirdBox(text) {
+      return text.replace(/([^\s])/g,"[Ì…Ì²$1]");
+    }
+
+
+
+
+    function littleSparkles(text) {
+      return "Ëœâ€ *Â°â€¢.Ëœâ€ *Â°â€¢ "+text+" â€¢Â°*â€ Ëœ.â€¢Â°*â€ Ëœ";
+    }
+
+
+
+
+    function kirbyHug(text) {
+      return "(ã £â—”â—¡â—”)ã £ â™¥ " + text + " â™¥"
+    }
+
+
+
+
+    function dottyJoiner(text) {
+      return "â–‘" + text.split("").join("â–‘") + "â–‘";
+    }
+
+
+
+
+    function wavyJoiner(text) {
+      return "â‰‹" + text.split("").join("â‰‹") + "â‰‹";
+    }
+
+
+
+
+    function diametricAngleFrame(text) {
+      return text.replace(/([^\s])/g,"ã€Ž$1ã€ ");
+    }
+
+
+
+
+    function thickBlockFramed(text) {
+      return text.replace(/([^\s])/g,"ã€ $1ã€‘");
+    }
+    
+    function applyCharMap(map, text) {
+      let out = "";
+       for(let c of text.split("")) {
+         if(map[c] !== undefined) out += map[c];
+         else if(map[c.toLowerCase()] !== undefined) out += map[c.toLowerCase()];
+         else out += c;
+       }
+      return out;
+    }

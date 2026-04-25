@@ -1,0 +1,187 @@
+<script>
+    
+
+            //try {
+                var reverseIsDisabled = false;
+                //<![CDATA[
+                var luni = new Lunicode();
+luni.tools.creepify.options.maxHeight = 10;
+
+function backward(text) {
+  return $("#english-text").val();
+}
+
+
+
+    function createMap(chars) {
+      var alphanum = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+      var i = 0;
+      var map = {};
+      for(var c of chars) {
+        map[ alphanum[i] ] = c;
+        i++;
+      }
+      return JSON.stringify(map);
+    }
+
+    function forward(text) {
+      text = text.trim();
+      if(text === "") {
+        return "";
+      }
+      var finalText = "";
+      finalText += applyCharMap(oldEnglishCharMap, text) + "\n\n";
+      finalText += applyCharMap(medievalCharMap, text) + "\n\n";
+      finalText += fullCrazy(text) + "\n\n";
+      finalText += applyCharMap(cursiveCharMap, text) + "\n\n";
+      finalText += scriptify(text) + "\n\n";
+      finalText += applyCharMap(doubleStruckCharMap, text) + "\n\n";
+      finalText += applyCharMap(wideTextCharMap, text) + "\n\n";
+      finalText += cuteText(text) + "\n\n";
+      finalText += luni.tools.tiny.encode(text) + "\n\n";
+      finalText += luni.tools.flip.encode(text) + "\n\n";
+      finalText += luni.tools.roundsquares.encode(text) + "\n\n";
+      finalText += luni.tools.squares.encode(text) + "\n\n";
+      finalText += applyCharMap(squaresCharMap, text) + "\n\n";
+      finalText += luni.tools.mirror.encode(text) + "\n\n";
+      finalText += luni.tools.creepify.encode(text) + "\n\n";
+      finalText += applyCharMap(invertedSquaresCharMap, text) + "\n\n";
+      finalText += applyCharMap(subscriptCharMap, text) + "\n\n";
+      finalText += applyCharMap(superscriptCharMap, text) + "\n\n";
+      finalText += luni.tools.bubbles.encode(text) + "\n\n";
+      finalText += applyCharMap(squiggleCharMap, text) + "\n\n";
+      finalText += applyCharMap(squiggle2CharMap, text) + "\n\n";
+      finalText += applyCharMap(squiggle3CharMap, text) + "\n\n";
+      finalText += applyCharMap(squiggle4CharMap, text) + "\n\n";
+      finalText += applyCharMap(squiggle5CharMap, text) + "\n\n";
+      finalText += applyCharMap(squiggle6CharMap, text) + "\n\n";
+      finalText += applyCharMap(boldCharMap, text) + "\n\n";
+      finalText += applyCharMap(boldSansCharMap, text) + "\n\n";
+      finalText += applyCharMap(italicCharMap, text) + "\n\n";
+      finalText += applyCharMap(boldItalicCharMap, text) + "\n\n";
+      finalText += applyCharMap(monospaceCharMap, text) + "\n\n";
+      finalText += applyCharMap(upperAnglesCharMap, text) + "\n\n";
+      finalText += applyCharMap(greekCharMap, text) + "\n\n";
+      finalText += applyCharMap(symbolsCharMap, text) + "\n\n";
+      finalText += applyCharMap(currencyCharMap, text) + "\n\n";
+      finalText += applyCharMap(asianStyleCharMap, text) + "\n\n";
+      finalText += applyCharMap(asianStyle2CharMap, text) + "\n\n";
+      finalText += thickBlockFramed(text) + "\n\n";
+      finalText += diametricAngleFrame(text) + "\n\n";
+      finalText += wavyJoiner(text) + "\n\n";
+      finalText += dottyJoiner(text) + "\n\n";
+      finalText += kirbyHug(text) + "\n\n";
+      finalText += vaporwaveText(text) + "\n\n";
+      finalText += littleSparkles(text) + "\n\n";
+      finalText += weirdBox(text) + "\n\n";
+      finalText += firework(text) + "\n\n";
+      finalText += applyCharMap(bentTextCharMap, text) + "\n\n";
+      finalText += applyCharMap(neonCharMap, text) + "\n\n";
+      finalText += applyCharMap(futureAlienCharMap, text) + "\n\n";
+      finalText += strikeThrough(text) + "\n\n";
+      finalText += tildeStrikeThrough(text) + "\n\n";
+      finalText += slashThrough(text) + "\n\n";
+      finalText += underline(text) + "\n\n";
+      finalText += doubleUnderline(text) + "\n\n";
+      finalText += stinky(text) + "\n\n";
+      finalText += heartsBetween(text) + "\n\n";
+      finalText += arrowBelow(text) + "\n\n";
+      finalText += crossAboveBelow(text) + "\n\n";
+      finalText += "Wingdings: "+wingdings(text) + "\n\n";
+      finalText += cuteText(text) + "\n\n";
+      finalText += cuteText(text) + "\n\n";
+      finalText += cuteText(text) + "\n\n";
+      finalText += cuteText(text) + "\n\n";
+      finalText += cuteText(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += crazyWithFlourishOrSymbols(text) + "\n\n";
+      finalText += cuteText(text) + "\n\n";
+      finalText += cuteText(text) + "\n\n";
+      finalText += cuteText(text) + "\n\n";
+      
+      return finalText.trim();
+    }
+    
+    function crazyWithFlourishOrSymbols(text) {
+      if(Math.random() < 0.7) return wrapInSymbols(crazifyText(text), 2);
+      else return wrapInFlourish(crazifyText(text), 2);
+    }
+    
+    function strikeThrough(text) {
+      return text.split("").join("Ì¶")+"Ì¶"; 
+    }
+    function tildeStrikeThrough(text) {
+      return text.split("").join("Ì´")+"Ì´";
+    }
+    function underline(text) {
+      return text.split("").join("Ì²")+"Ì²";
+    }
+    function doubleUnderline(text) {
+      return text.split("").join("Ì³")+"Ì³";
+    }
+    function slashThrough(text) {
+      return text.split("").join("Ì·")+"Ì·";
+    }
+    function stinky(text) {
+      return text.split("").join("Ì¾")+"Ì¾"
+    }
+    function heartsBetween(text) {
+      return text.split("").join("â™¥");
+    }
+    function arrowBelow(text) {
+      return text.split("").join("ÍŽ")+"ÍŽ";
+    }
+    function crossAboveBelow(text) {
+      return text.split("").join("Ì½Í“")+"Ì½Í“";
+    }
+    
+      const wingdingsCharMap =
+ {"0":"ðŸ“ ï¸Ž","1":"ðŸ“‚ï¸Ž","2":"ðŸ“„ï¸Ž","3":"ðŸ— ï¸Ž","4":"ðŸ— ï¸Ž","5":"ðŸ—„ï¸Ž","6":"âŒ›ï¸Ž","7":"ðŸ–®ï¸Ž","8":"ðŸ–°ï¸Ž","9":"ðŸ–²ï¸Ž","!":"âœ ï¸Ž","\"":"âœ‚ï¸Ž","#":"âœ ï¸Ž","$":"ðŸ‘“ï¸Ž","%":"ðŸ•­ï¸Ž","&":"ðŸ•®ï¸Ž","'":"ðŸ•¯ï¸Ž","(":"ðŸ•¿ï¸Ž",")":"âœ†ï¸Ž","*":"ðŸ–‚ï¸Ž","+":"ðŸ–ƒï¸Ž",",":"ðŸ“ªï¸Ž","-":"ðŸ“«ï¸Ž",".":"ðŸ“¬ï¸Ž","/":"ðŸ“­ï¸Ž",":":"ðŸ–³ï¸Ž",";":"ðŸ–´ï¸Ž","<":"ðŸ–«ï¸Ž","=":"ðŸ–¬ï¸Ž",">":"âœ‡ï¸Ž","?":"âœ ï¸Ž","A":"âœŒï¸Ž","B":"ðŸ‘Œï¸Ž","C":"ðŸ‘ ï¸Ž","D":"ðŸ‘Žï¸Ž","E":"â˜œï¸Ž","F":"â˜žï¸Ž","G":"â˜ ï¸Ž","H":"â˜Ÿï¸Ž","I":"âœ‹ï¸Ž","J":"â˜ºï¸Ž","K":"ðŸ˜ ï¸Ž","L":"â˜¹ï¸Ž","M":"ðŸ’£ï¸Ž","N":"â˜ ï¸Ž","O":"âš ï¸Ž","P":"ðŸ ±ï¸Ž","Q":"âœˆï¸Ž","R":"â˜¼ï¸Ž","S":"ðŸ’§ï¸Ž","T":"â „ï¸Ž","U":"ðŸ•†ï¸Ž","V":"âœžï¸Ž","W":"ðŸ•ˆï¸Ž","X":"âœ ï¸Ž","Y":"âœ¡ï¸Ž","Z":"â˜ªï¸Ž","[":"â˜¯ï¸Ž","\\":"à¥ ï¸Ž","]":"â˜¸ï¸Ž","^":"â™ˆï¸Ž","_":"â™‰ï¸Ž","`":"â™Šï¸Ž","a":"â™‹ï¸Ž","b":"â™Œï¸Ž","c":"â™ ï¸Ž","d":"â™Žï¸Ž","e":"â™ ï¸Ž","f":"â™ ï¸Ž","g":"â™‘ï¸Ž","h":"â™’ï¸Ž","i":"â™“ï¸Ž","j":"ðŸ™°","k":"ðŸ™µ","l":"â— ï¸Ž","m":"â ï¸Ž","n":"â– ï¸Ž","o":"â–¡ï¸Ž","p":"â—»ï¸Ž","q":"â ‘ï¸Ž","r":"â ’ï¸Ž","s":"â¬§ï¸Ž","t":"â§«ï¸Ž","u":"â—†ï¸Ž","v":"â –ï¸Ž","w":"â¬¥ï¸Ž","x":"âŒ§ï¸Ž","y":"â “ï¸Ž","z":"âŒ˜ï¸Ž","{":"â €ï¸Ž","|":"âœ¿ï¸Ž","}":"â ï¸Ž","~":"â žï¸Ž"," ":"â–¯ï¸Ž","â‚¬":"â“ªï¸Ž"," ":"â‘ ï¸Ž","â€š":"â‘¡ï¸Ž","Æ’":"â‘¢ï¸Ž","â€ž":"â‘£ï¸Ž","â€¦":"â‘¤ï¸Ž","â€ ":"â‘¥ï¸Ž","â€¡":"â‘¦ï¸Ž","Ë†":"â‘§ï¸Ž","â€°":"â‘¨ï¸Ž","Å ":"â‘©ï¸Ž","â€¹":"â“¿ï¸Ž","Å’":"â ¶ï¸Ž"," ":"â ·ï¸Ž","Å½":"â ¸ï¸Ž"," ":"â ¹ï¸Ž"," ":"â ºï¸Ž","â€˜":"â »ï¸Ž","â€™":"â ¼ï¸Ž","â€œ":"â ½ï¸Ž","â€ ":"â ¾ï¸Ž","â€¢":"â ¿ï¸Ž","â€“":"â—»ï¸Ž","â€”":"â—»ï¸Ž","Ëœ":"â—»ï¸Ž","â„¢":"â—»ï¸Ž","Å¡":"â—»ï¸Ž","â€º":"â—»ï¸Ž","Å“":"â—»ï¸Ž"," ":"â—»ï¸Ž","Å¾":"Â·ï¸Ž","Å¸":"â€¢ï¸Ž","Â¡":"â—‹ï¸Ž","Â¢":"â­•ï¸Ž","Â£":"â—»ï¸Ž","Â¤":"â—‰ï¸Ž","Â¥":"â—Žï¸Ž","Â¦":"â—»ï¸Ž","Â§":"â–ªï¸Ž","Â¨":"â—»ï¸Ž","Â©":"â—»ï¸Ž","Âª":"âœ¦ï¸Ž","Â«":"â˜…ï¸Ž","Â¬":"âœ¶ï¸Ž","Â®":"âœ¹ï¸Ž","Â¯":"âœµï¸Ž","Â°":"â—»ï¸Ž","Â±":"âŒ–ï¸Ž","Â²":"âŸ¡ï¸Ž","Â³":"âŒ‘ï¸Ž","Â´":"â—»ï¸Ž","Âµ":"âœªï¸Ž","Â¶":"âœ°ï¸Ž","Â·":"ðŸ• ï¸Ž","Â¸":"ðŸ•‘ï¸Ž","Â¹":"ðŸ•’ï¸Ž","Âº":"ðŸ•“ï¸Ž","Â»":"ðŸ•”ï¸Ž","Â¼":"ðŸ••ï¸Ž","Â½":"ðŸ•–ï¸Ž","Â¾":"ðŸ•—ï¸Ž","Â¿":"ðŸ•˜ï¸Ž","Ã€":"ðŸ•™ï¸Ž","Ã ":"ðŸ•šï¸Ž","Ã‚":"ðŸ•›ï¸Ž","Ãƒ":"â—»ï¸Ž","Ã„":"â—»ï¸Ž","Ã…":"â—»ï¸Ž","Ã†":"â—»ï¸Ž","Ã‡":"â—»ï¸Ž","Ãˆ":"â—»ï¸Ž","Ã‰":"â—»ï¸Ž","ÃŠ":"â—»ï¸Ž","Ã‹":"â—»ï¸Ž","ÃŒ":"â—»ï¸Ž","Ã ":"â—»ï¸Ž","ÃŽ":"â—»ï¸Ž","Ã ":"â—»ï¸Ž","Ã ":"â—»ï¸Ž","Ã‘":"â—»ï¸Ž","Ã’":"â—»ï¸Ž","Ã“":"â—»ï¸Ž","Ã”":"â—»ï¸Ž","Ã•":"âŒ«ï¸Ž","Ã–":"âŒ¦ï¸Ž","Ã—":"â—»ï¸Ž","Ã˜":"âž¢ï¸Ž","Ã™":"â—»ï¸Ž","Ãš":"â—»ï¸Ž","Ã›":"â—»ï¸Ž","Ãœ":"âž²ï¸Ž","Ã ":"â—»ï¸Ž","Ãž":"â—»ï¸Ž","ÃŸ":"â—»ï¸Ž","Ã ":"â—»ï¸Ž","Ã¡":"â—»ï¸Ž","Ã¢":"â—»ï¸Ž","Ã£":"â—»ï¸Ž","Ã¤":"â—»ï¸Ž","Ã¥":"â—»ï¸Ž","Ã¦":"â—»ï¸Ž","Ã§":"â—»ï¸Ž","Ã¨":"âž”ï¸Ž","Ã©":"â—»ï¸Ž","Ãª":"â—»ï¸Ž","Ã«":"â—»ï¸Ž","Ã¬":"â—»ï¸Ž","Ã­":"â—»ï¸Ž","Ã®":"â—»ï¸Ž","Ã¯":"â‡¦ï¸Ž","Ã°":"â‡¨ï¸Ž","Ã±":"â‡§ï¸Ž","Ã²":"â‡©ï¸Ž","Ã³":"â¬„ï¸Ž","Ã´":"â‡³ï¸Ž","Ãµ":"â¬€ï¸Ž","Ã¶":"â¬ ï¸Ž","Ã·":"â¬ƒï¸Ž","Ã¸":"â¬‚ï¸Ž","Ã¹":"â–­ï¸Ž","Ãº":"â–«ï¸Ž","Ã»":"âœ—ï¸Ž","Ã¼":"âœ“ï¸Ž","Ã½":"â˜’ï¸Ž","Ã¾":"â˜‘ï¸Ž","Ã¿":"â—»ï¸Ž"};
+    function wingdings(text) {
+      return text.split("").map(function(a) {return wingdingsCharMap[a] ? wingdingsCharMap[a] : a}).join("");
+    }
+    
+    const vaporwaveCharMap = {" ":"ã€€", "`" : "`","1" : "ï¼‘","2" : "ï¼’","3" : "ï¼“","4" : "ï¼”","5" : "ï¼•","6" : "ï¼–","7" : "ï¼—","8" : "ï¼˜","9" : "ï¼™","0" : "ï¼ ","-" : "ï¼ ","=" : "ï¼ ","~" : "~","!" : "ï¼ ","@" : "ï¼ ","#" : "ï¼ƒ","$" : "ï¼„","%" : "ï¼…","^" : "^","&" : "ï¼†","*" : "ï¼Š","(" : "ï¼ˆ",")" : "ï¼‰","_" : "_","+" : "ï¼‹","q" : "ï½‘","w" : "ï½—","e" : "ï½…","r" : "ï½’","t" : "ï½”","y" : "ï½™","u" : "ï½•","i" : "ï½‰","o" : "ï½ ","p" : "ï½ ","[" : "[","]" : "]","\\" : "\\","Q" : "ï¼±","W" : "ï¼·","E" : "ï¼¥","R" : "ï¼²","T" : "ï¼´","Y" : "ï¼¹","U" : "ï¼µ","I" : "ï¼©","O" : "ï¼¯","P" : "ï¼°","{" : "{","}" : "}","|" : "|","a" : "ï½ ","s" : "ï½“","d" : "ï½„","f" : "ï½†","g" : "ï½‡","h" : "ï½ˆ","j" : "ï½Š","k" : "ï½‹","l" : "ï½Œ",";" : "ï¼›","'" : "ï¼‡","A" : "ï¼¡","S" : "ï¼³","D" : "ï¼¤","F" : "ï¼¦","G" : "ï¼§","H" : "ï¼¨","J" : "ï¼ª","K" : "ï¼«","L" : "ï¼¬",":" : "ï¼š","\"" : "\"","z" : "ï½š","x" : "ï½˜","c" : "ï½ƒ","v" : "ï½–","b" : "ï½‚","n" : "ï½Ž","m" : "ï½ ","," : "ï¼Œ","." : "ï¼Ž","/" : "ï¼ ","Z" : "ï¼º","X" : "ï¼¸","C" : "ï¼£","V" : "ï¼¶","B" : "ï¼¢","N" : "ï¼®","M" : "ï¼­","<" : "<",">" : ">","?" : "ï¼Ÿ"};
+    function vaporwaveText(text) {
+      var numSpaces = text.split(" ").length;
+      text = applyCharMap(vaporwaveCharMap, text);
+      var asianChars = getAsianChars(Math.max(3, numSpaces));
+      if(numSpaces > 6) asianChars = asianChars.split("").map(c => c+["","ã€€"][Math.round(Math.random()*0.6)]).join("");
+      var outputs = [];
+      outputs.push( text+"ã€€"+asianChars );
+      outputs.push( text.replace(/ã€€/g, "â–‘").replace(/ï½ ï½…/, "Ã¦").replace(/ï¼¡/g, "Î›").replace(/ï¼¥/g, function() { return Math.random() > 0.5 ? "Îž" : "Î£"; }).replace(/ï¼¯/g, "â™¢")+"ã€€ï¼ˆ"+asianChars+"ï¼‰" );
+      outputs.push("ã€ ï»¿"+text+"ã€‘");
+      return outputs.join("\n\n");
+    }
+
+    function getAsianChars(n) {
+      if(!n) n = 1;
+      var chars = "ãƒªã‚µãƒ•ãƒ©ãƒ³ã‚¯ç ¾ä»£ã ®ã‚³ãƒ³ãƒ”ãƒ¥ç«¹å†… ã ¾ã‚Šã‚„è‹¥è€…ã Œå±¥ã æµ è¡Œã ®ã‚¹ãƒ‹ãƒ¼ã‚«ãƒ¼çœŸå¤œä¸­ã ®ãƒ‰ã‚¢ãƒ›ãƒƒãƒˆãƒ‰ãƒƒã‚°ãƒžã‚¹ã‚¿ãƒ¼ã‚¹ãƒˆãƒ©ã‚¤ã‚«ãƒ¼ã‚½ãƒ‹ãƒ¼ãƒ–ã‚®æ–°ã —ã „æ—¥ã ®èª•ç”Ÿãƒ©ã‚¤ãƒ• - ãƒ’ã‚¹ã‚¤è’¸æ°—æ³¢ ç„¡ç·šã‚ ã‚¡ã‚¢ã‚£ã‚¤ã‚¥ã‚¦ã‚§ã‚¨ã‚©ã‚ªã‚«ã‚¬ã‚­ã‚®ã‚¯ã‚°ã‚±ã‚²ã‚³ã‚´ã‚µã‚¶ã‚·ã‚¸ã‚¹ã‚ºã‚»ã‚¼ã‚½ã‚¾ã‚¿ãƒ€ãƒ ãƒ‚ãƒƒãƒ„ãƒ…ãƒ†ãƒ‡ãƒˆãƒ‰ãƒŠãƒ‹ãƒŒãƒ ãƒŽãƒ ãƒ ãƒ‘ãƒ’ãƒ“ãƒ”ãƒ•ãƒ–ãƒ—ãƒ˜ãƒ™ãƒšãƒ›ãƒœãƒ ãƒžãƒŸãƒ ãƒ¡ãƒ¢ãƒ£ãƒ¤ãƒ¥ãƒ¦ãƒ§ãƒ¨ãƒ©ãƒªãƒ«ãƒ¬ãƒ­ãƒ®ãƒ¯ãƒ°ãƒ±ãƒ²ãƒ³ãƒ´ãƒµãƒ¶ãƒ·ãƒ¸ãƒ¹ãƒºãƒ»ãƒ¼ãƒ½ãƒ¾ãƒ¿ã ã ‚ã ƒã „ã …ã †ã ‡ã ˆã ‰ã Šã ‹ã Œã ã Žã ã ã ‘ã ’ã “ã ”ã •ã –ã —ã ˜ã ™ã šã ›ã œã ã žã Ÿã  ã ¡ã ¢ã £ã ¤ã ¥ã ¦ã §ã ¨ã ©ã ªã «ã ¬ã ­ã ®ã ¯ã °ã ±ã ²ã ³ã ´ã µã ¶ã ·ã ¸ã ¹ã ºã »ã ¼ã ½ã ¾ã ¿ã‚€ã‚ ã‚‚ã‚ƒã‚„ã‚…ã‚†ã‚‡ã‚ˆã‚‰ã‚Šã‚‹ã‚Œã‚ ã‚Žã‚ ã‚ ã‚‘ã‚’ã‚“ã‚”ã‚•ã‚–ã‚™ã‚šã‚›ã‚œã‚ ã‚žã‚Ÿäºœå“€æŒ¨æ„›æ›–æ‚ªæ ¡åœ§æ‰±å®›åµ å®‰æ¡ˆæš—ä»¥è¡£ä½ å›²åŒ»ä¾ å§”å¨ ç‚ºç• èƒƒå°‰ç•°ç§»è Žå ‰æ¤…å½™æ„ é •ç¶­æ…°é ºç·¯åŸŸè‚²å£±é€¸èŒ¨èŠ‹å¼•å °å› å’½å§»å“¡é™¢æ·«é™°é£²éš éŸ»å ³å®‡ç¾½é›¨å”„é¬±ç• æµ¦é ‹é›²æ°¸æ³³è‹±æ˜ æ „å–¶è© å½±é‹­è¡›æ˜“ç–«ç›Šæ¶²é§…æ‚¦è¶Šè¬ é–²å††å»¶æ²¿ç‚Žæ€¨å®´åª›æ ´åœ’ç…™çŒ¿é  é‰›å¡©æ¼”ç¸ è‰¶æ±šçŽ‹å‡¹å¤®å¿œå¾€æŠ¼æ—ºæ¬§æ®´æ¡œç¿ å¥¥æ¨ªå²¡å±‹å„„æ†¶è‡†è™žä¹™ä¿ºå ¸éŸ³æ ©æ¸©ç© ä¸‹åŒ–ç «åŠ å ¯ä»®ä½•èŠ±ä½³ä¾¡æžœæ²³è‹›ç§‘";
+      var str = "";
+      for(var i = 0; i < n; i++) {
+        str += chars[Math.floor(Math.random()*chars.length)];
+      }
+      return str;
+    }
+    
+    
+    const flourishArray = ["â˜…å½¡[[text]]å½¡â˜…", "â˜…Â·.Â·Â´Â¯`Â·.Â·â˜… [[text]] â˜…Â·.Â·Â´Â¯`Â·.Â·â˜…", "â– â–‚ â–„ â–… â–† â–‡ â–ˆ [[text]] â–ˆ â–‡ â–† â–… â–„ â–‚ â– ", "Â°Â°Â°Â·.Â°Â·..Â·Â°Â¯Â°Â·._.Â· [[text]] Â·._.Â·Â°Â¯Â°Â·.Â·Â° .Â·Â°Â°Â°", "Â¸,Ã¸Â¤ÂºÂ°`Â°ÂºÂ¤Ã¸,Â¸Â¸,Ã¸Â¤ÂºÂ° [[text]] Â°ÂºÂ¤Ã¸,Â¸Â¸,Ã¸Â¤ÂºÂ°`Â°ÂºÂ¤Ã¸,Â¸", "Ä±llÄ±llÄ± [[text]] Ä±llÄ±llÄ±", "â€¢?((Â¯Â°Â·._.â€¢ [[text]] â€¢._.Â·Â°Â¯))ØŸâ€¢", "â–Œâ”‚â–ˆâ•‘â–Œâ•‘â–Œâ•‘ [[text]] â•‘â–Œâ•‘â–Œâ•‘â–ˆâ”‚â–Œ", "Ã—ÂºÂ°â€ Ëœ`â€ Â°ÂºÃ— [[text]] Ã—ÂºÂ°â€ Ëœ`â€ Â°ÂºÃ—", "â€¢]â€¢â€¢Â´ÂºÂ´â€¢Â» [[text]] Â«â€¢Â´ÂºÂ´â€¢â€¢[â€¢", "*â€¢.Â¸â™¡ [[text]] â™¡Â¸.â€¢*", "â•°â˜†â˜† [[text]] â˜†â˜†â•®", ".â€¢Â°Â¤*(Â¯`â˜…Â´Â¯)*Â¤Â° [[text]] Â°Â¤*(Â¯Â´â˜…`Â¯)*Â¤Â°â€¢.", "(Â¯Â´â€¢._.â€¢ [[text]] â€¢._.â€¢Â´Â¯)", "Â¸â€ž.-â€¢~Â¹Â°â€ Ë†ËœÂ¨ [[text]] Â¨ËœË†â€ Â°Â¹~â€¢-.â€žÂ¸", "â–‘â–’â–“â–ˆ [[text]] â–ˆâ–“â–’â–‘", "â–‘â–’â–“â–ˆâ–ºâ”€â• [[text]] â• â”€â—„â–ˆâ–“â–’â–‘", "â˜…å½¡ [[text]] å½¡â˜…", "â€¢Â´Â¯`â€¢. [[text]] .â€¢Â´Â¯`â€¢", "Â§.â€¢Â´Â¨'Â°Ã·â€¢..Ã— [[text]] Ã—,.â€¢Â´Â¨'Â°Ã·â€¢..Â§", "â€¢Â°Â¯`â€¢â€¢ [[text]] â€¢â€¢Â´Â¯Â°â€¢", "(Â¯`*â€¢.Â¸,Â¤Â°Â´âœ¿.ï½¡.:* [[text]] *.:ï½¡.âœ¿`Â°Â¤,Â¸.â€¢*Â´Â¯)", "|!Â¤*'~``~'*Â¤!| [[text]] |!Â¤*'~``~'*Â¤!|", "â€¢._.â€¢â€¢Â´Â¯``â€¢.Â¸Â¸.â€¢` [[text]] `â€¢.Â¸Â¸.â€¢Â´Â´Â¯`â€¢â€¢._.â€¢", "Â¸â€ž.-â€¢~Â¹Â°â€ Ë†ËœÂ¨ [[text]] Â¨ËœË†â€ Â°Â¹~â€¢-.â€žÂ¸", "(Â¯Â´â€¢._.â€¢ [[text]] â€¢._.â€¢Â´Â¯)", "â€¢â€¢Â¤(`Ã—[Â¤ [[text]] Â¤]Ã—Â´)Â¤â€¢â€¢", "â€¢Â´Â¯`â€¢Â» [[text]] Â«â€¢Â´Â¯`â€¢", " .o0Ã—XÃ—0o. [[text]] .o0Ã—XÃ—0o.", "Â¤Â¸Â¸.â€¢Â´Â¯`â€¢Â¸Â¸.â€¢..>> [[text]] <<..â€¢.Â¸Â¸â€¢Â´Â¯`â€¢.Â¸Â¸Â¤", "â€”(â€¢â€¢Ã·[ [[text]] ]Ã·â€¢â€¢)â€”", "Â¸,Ã¸Â¤ÂºÂ°`Â°ÂºÂ¤Ã¸,Â¸ [[text]] Â¸,Ã¸Â¤ÂºÂ°`Â°ÂºÂ¤Ã¸,Â¸", "`â€¢.Â¸Â¸.â€¢Â´Â´Â¯`â€¢â€¢._.â€¢ [[text]] â€¢._.â€¢â€¢`Â¯Â´Â´â€¢.Â¸Â¸.â€¢`", ",-*' ^ '~*-.,_,.-*~ [[text]] ~*-.,_,.-*~' ^ '*-,", "`â€¢.,Â¸Â¸,.â€¢Â´Â¯ [[text]] Â¯`â€¢.,Â¸Â¸,.â€¢Â´", "â†¤â†¤â†¤â†¤â†¤ [[text]] â†¦â†¦â†¦â†¦â†¦", "âž¶âž¶âž¶âž¶âž¶ [[text]] âž·âž·âž·âž·âž·", "â†«â†«â†«â†«â†« [[text]] â†¬â†¬â†¬â†¬â†¬", "Â·.Â¸Â¸.Â·â™©â™ªâ™« [[text]] â™«â™ªâ™©Â·.Â¸Â¸.Â·", "ã€ ï½¡_ï½¡ã€‘ [[text]] ã€ ï½¡_ï½¡ã€‘", "]|I{â€¢------Â» [[text]] Â«------â€¢}I|[", "â–€â–„â–€â–„â–€â–„ [[text]] â–„â–€â–„â–€â–„â–€", "(-_-) [[text]] (-_-)", "â€¢Â´Â¯`â€¢. [[text]] .â€¢Â´Â¯`â€¢", "-æ¼«~*'Â¨Â¯Â¨'*Â·èˆž~ [[text]] ~èˆž*'Â¨Â¯Â¨'*Â·~æ¼«-", "à¹‘Ûžà¹‘,Â¸Â¸,Ã¸Â¤ÂºÂ°`Â°à¹‘Û© [[text]] à¹‘Û© ,Â¸Â¸,Ã¸Â¤ÂºÂ°`Â°à¹‘Ûžà¹‘", ".â€¢Â°Â¤*(Â¯`â˜…Â´Â¯)*Â¤Â° [[text]] Â°Â¤*(Â¯Â´â˜…`Â¯)*Â¤Â°â€¢.", "â€¢â€¢.â€¢Â´Â¯`â€¢.â€¢â€¢ [[text]] â€¢â€¢.â€¢Â´Â¯`â€¢.â€¢â€¢", "Â¤Â¸Â¸.â€¢Â´Â¯`â€¢Â¸Â¸.â€¢..>> [[text]] <<..â€¢.Â¸Â¸â€¢Â´Â¯`â€¢.Â¸Â¸Â¤", "â—¦â€¢â— â—‰âœ¿ [[text]] âœ¿â—‰â— â€¢â—¦", "â•šÂ»â˜…Â«â• [[text]] â•šÂ»â˜…Â«â• ", "-Â·=Â»â€¡Â«=Â·- [[text]] -Â·=Â»â€¡Â«=Â·-", "âˆ™âˆ™Â·â–«â–«áµ’á´¼áµ’â–«â‚’â‚’â–«áµ’á´¼áµ’â–«â‚’â‚’â–«áµ’á´¼áµ’ [[text]] áµ’á´¼áµ’â–«â‚’â‚’â–«áµ’á´¼áµ’â–«â‚’â‚’â–«áµ’á´¼áµ’â–«â–«Â·âˆ™âˆ™", "Â¸Â¸â™¬Â·Â¯Â·â™©Â¸Â¸â™ªÂ·Â¯Â·â™«Â¸Â¸ [[text]] Â¸Â¸â™«Â·Â¯Â·â™ªÂ¸Â¸â™©Â·Â¯Â·â™¬Â¸Â¸", "à®œÛ©ÛžÛ©à®œ [[text]] à®œÛ©ÛžÛ©à®œ", "Â¤ (Â¯Â´â˜†âœ­.Â¸_)Â¤ [[text]] Â¤(_Â¸.âœ­â˜†Â´Â¯) Â¤", "(Â¯`Â·.Â¸Â¸.Â·Â´Â¯`Â·.Â¸Â¸.-> [[text]] <-.Â¸Â¸.Â·Â´Â¯`Â·.Â¸Â¸.Â·Â´Â¯)", "âœ¿.ï½¡.:* â˜†:**:. [[text]] .:**:.â˜†*.:ï½¡.âœ¿", ".â€¢â™«â€¢â™¬â€¢ [[text]] â€¢â™¬â€¢â™«â€¢.", "áƒ¦(Â¯`â—•â€¿â—•Â´Â¯) â™« â™ª â™« [[text]] â™« â™ª â™« (Â¯`â—•â€¿â—•Â´Â¯)áƒ¦", "Â«-(Â¯`vÂ´Â¯)-Â« [[text]] Â»-(Â¯`vÂ´Â¯)-Â»"];
